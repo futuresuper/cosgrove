@@ -2,12 +2,58 @@
 	font-family: 'MonumentGrotesk';
 	src: url('./lib/fonts/MonumentGrotesk-Regular.otf');
 }
+
 :root {
 	font-family: 'MonumentGrotesk', sans-serif;
+
+	/* Colours */
+	--green: #3dfa52;
+	--black: #000000;
+	--white: #ffffff;
+
+	/* Text sizes */
+	--xxs: 12px;
+	--xs: 18px;
+	--s: 28px;
+	--m: 32px;
+	--l: 50px;
+	--xl: 55px;
+	--xxl: 90px;
+
+	/* Borders */
+	--border-radius: 40px;
+	--border-width: 4px;
 }
+
+@media (max-width: 1000px) {
+	:root {
+		/* Text sizes */
+		--xxs: 12px;
+		--xs: 15px;
+		--s: 20px;
+		--m: 24px;
+		--l: 34px;
+		--xl: 40px;
+		--xxl: 70px;
+	}
+}
+
+@media (max-width: 600px) {
+	:root {
+		/* Text sizes */
+		--xxs: 12px;
+		--xs: 14px;
+		--s: 18px;
+		--m: 18px;
+		--l: 30px;
+		--xl: 36px;
+		--xxl: 50px;
+	}
+}
+
 body {
 	margin: 0;
-	background-color: white;
+	background-color: var(--white);
 }
 
 html {

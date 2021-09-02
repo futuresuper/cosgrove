@@ -123,20 +123,11 @@ gl_FragColor = vec4(0.0, 1.0, 0.0, 0.5);
 	});
 </script>
 
-<body>
-	<h1>Cosgrove</h1>
-	<div id="map" />
-</body>
+<div id="map" />
 
 <style>
-	body {
-		margin: 0;
-		padding: 0;
-	}
 	#map {
-		position: absolute;
-		top: 0;
-		bottom: 0;
 		width: 100%;
+		height: 70vh;
 	}
 </style>
