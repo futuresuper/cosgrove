@@ -24,7 +24,7 @@
 		setTimeout(() => {
 			animationStarted = true;
 			interval = setInterval(updateStats, updateSpeed);
-		}, 1000);
+		}, 300);
 	};
 
 	let km = 0;
@@ -156,7 +156,6 @@
 		position: relative;
 		width: 100%;
 		height: 600px;
-		margin-bottom: 100vh;
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-end;

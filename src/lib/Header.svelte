@@ -6,11 +6,11 @@
 <header>
 	<Logo colour={colours.black} />
 	<div class="text">
-		<p>We’re changing how you experience your super.</p>
+		<p>We’re changing how you experience your&nbsp;super.</p>
 		<p>
 			For the first time, you get to follow a solar farm, from the moment you invest, through
-			building, to becoming an owner of a renewables producer that powers an entire regional
-			community.
+			building, to becoming an owner of a renewables producer that powers an entire
+			regional&nbsp;community.
 		</p>
 	</div>
 

@@ -17,7 +17,7 @@
 	<ThisIsCosgrove />
 	<Directions />
 	<Details />
-	<Map />
+	<!-- <Map /> -->
 	<Productive />
 	<Stats />
 	<Rural />
