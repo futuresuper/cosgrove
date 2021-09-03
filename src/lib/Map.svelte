@@ -239,10 +239,15 @@ gl_FragColor = vec4(0.0, 1.0, 0.0, 0.5);
 		color: var(--white);
 		font-size: var(--xs);
 		z-index: 99;
-		margin: 20px 20% 20px 20%;
-		left: 0;
+		margin: 20px 40px;
 		padding: 10px;
 		background-color: rgba(0, 0, 0, 0.3);
 		text-align: center;
+	}
+
+	@media (max-width: 700px) {
+		p {
+			margin: 20px 20% 20px 20%;
+		}
 	}
 </style>
