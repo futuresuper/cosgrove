@@ -21,7 +21,7 @@
 
 <style>
 	.container {
-		padding: 80px 20px;
+		padding: 80px 20px 20px 20px;
 	}
 
 	#first-row {
@@ -84,14 +84,13 @@
 		}
 
 		#gate-image-container {
-			margin-top: -20px;
+			margin-top: 20px;
 		}
 	}
 
 	@media (max-width: 700px) {
 		img {
 			width: 50%;
-			height: 300px;
 		}
 
 		p#not-far-from {

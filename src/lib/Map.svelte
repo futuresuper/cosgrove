@@ -9,9 +9,92 @@
 		const map = new mapboxgl.Map({
 			container: 'map',
 			center: [145.5102271371005, -36.382720302626736], // starting position [lng, lat]
-			zoom: 4, // starting zoom
+			zoom: 3, // starting zoom
 			style: 'mapbox://styles/mapbox/dark-v10',
 			antialias: true // create the gl context with MSAA antialiasing, so custom layers are antialiased
+		});
+
+		const size = 140;
+
+		// This implements `StyleImageInterface`
+		// to draw a pulsing dot icon on the map.
+		const pulsingDot = {
+			width: size,
+			height: size,
+			data: new Uint8Array(size * size * 4),
+
+			// When the layer is added to the map,
+			// get the rendering context for the map canvas.
+			onAdd: function () {
+				const canvas = document.createElement('canvas');
+				canvas.width = this.width;
+				canvas.height = this.height;
+				this.context = canvas.getContext('2d');
+			},
+
+			// Call once before every frame where the icon will be used.
+			render: function () {
+				const duration = 1500;
+				const t = (performance.now() % duration) / duration;
+
+				const radius = (size / 2) * 0.3;
+				const outerRadius = (size / 2) * 0.7 * t + radius;
+				const context = this.context;
+
+				// Draw the outer circle.
+				context.clearRect(0, 0, this.width, this.height);
+				context.beginPath();
+				context.arc(this.width / 2, this.height / 2, outerRadius, 0, Math.PI * 2);
+				context.fillStyle = `rgba(61, 250, 82, ${1 - t})`;
+				context.fill();
+
+				// Draw the inner circle.
+				context.beginPath();
+				context.arc(this.width / 2, this.height / 2, radius, 0, Math.PI * 2);
+				context.fillStyle = 'rgba(61, 250, 82, 1)';
+				context.strokeStyle = 'rgba(255,255,255, 0.5)';
+				context.lineWidth = 2 + 4 * (1 - t);
+				context.fill();
+				// context.stroke();
+
+				// Update this image's data with data from the canvas.
+				this.data = context.getImageData(0, 0, this.width, this.height).data;
+
+				// Continuously repaint the map, resulting
+				// in the smooth animation of the dot.
+				map.triggerRepaint();
+
+				// Return `true` to let the map know that the image was updated.
+				return true;
+			}
+		};
+
+		map.on('load', () => {
+			map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 });
+
+			map.addSource('dot-point', {
+				type: 'geojson',
+				data: {
+					type: 'FeatureCollection',
+					features: [
+						{
+							type: 'Feature',
+							geometry: {
+								type: 'Point',
+								coordinates: [145.63, -36.31] // icon position [lng, lat]
+							}
+						}
+					]
+				}
+			});
+			map.addLayer({
+				id: 'layer-with-pulsing-dot',
+				type: 'symbol',
+				source: 'dot-point',
+				layout: {
+					'icon-image': 'pulsing-dot'
+				}
+			});
 		});
 
 		// create a custom style layer to implement the WebGL content
@@ -120,12 +203,13 @@ gl_FragColor = vec4(0.0, 1.0, 0.0, 0.5);
 		});
 
     */
-		const marker1 = new mapboxgl.Marker().setLngLat([145.5643507, -36.345906]).addTo(map);
+		// const marker1 = new mapboxgl.Marker().setLngLat([145.5643507, -36.345906]).addTo(map);
 	});
 </script>
 
 <div id="map-container">
 	<div id="map-cropping">
+		<p>Drag to move map, Scroll/pinch to zoom</p>
 		<div id="map" />
 	</div>
 </div>
@@ -135,6 +219,8 @@ gl_FragColor = vec4(0.0, 1.0, 0.0, 0.5);
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		background-color: var(--black);
+		padding: 40px 0;
 	}
 
 	#map-cropping {
@@ -146,6 +232,15 @@ gl_FragColor = vec4(0.0, 1.0, 0.0, 0.5);
 
 	#map {
 		height: 80vh;
-		/* height: 80vh; */
+	}
+
+	p {
+		position: absolute;
+		color: var(--white);
+		font-size: var(--xs);
+		z-index: 99;
+		margin: 20px 40px;
+		padding: 10px;
+		background-color: rgba(0, 0, 0, 0.3);
 	}
 </style>
