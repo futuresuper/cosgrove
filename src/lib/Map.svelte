@@ -8,8 +8,8 @@
 
 		const map = new mapboxgl.Map({
 			container: 'map',
-			center: [145.24138875562613, -36.59965724996925], // starting position [lng, lat]
-			zoom: 9, // starting zoom
+			center: [145.5102271371005, -36.382720302626736], // starting position [lng, lat]
+			zoom: 4, // starting zoom
 			style: 'mapbox://styles/mapbox/dark-v10',
 			antialias: true // create the gl context with MSAA antialiasing, so custom layers are antialiased
 		});
@@ -118,16 +118,34 @@ gl_FragColor = vec4(0.0, 1.0, 0.0, 0.5);
 			zoom: 7, // starting zoom
 			pitch: 50
 		});
-		const marker1 = new mapboxgl.Marker().setLngLat([145.5643507, -36.345906]).addTo(map);
+
     */
+		const marker1 = new mapboxgl.Marker().setLngLat([145.5643507, -36.345906]).addTo(map);
 	});
 </script>
 
-<div id="map" />
+<div id="map-container">
+	<div id="map-cropping">
+		<div id="map" />
+	</div>
+</div>
 
 <style>
-	#map {
-		width: 100%;
+	#map-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#map-cropping {
+		width: 80%;
 		height: 70vh;
+		overflow: hidden;
+		border-radius: var(--border-radius);
+	}
+
+	#map {
+		height: 80vh;
+		/* height: 80vh; */
 	}
 </style>
