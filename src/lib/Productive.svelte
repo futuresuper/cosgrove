@@ -27,6 +27,12 @@
 		border-radius: 200px;
 	}
 
+	@media (max-width: 700px) {
+		div {
+			height: 60vh;
+		}
+	}
+
 	@media (max-width: 490px) {
 		h2 {
 			border-radius: var(--border-radius);

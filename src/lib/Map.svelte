@@ -225,13 +225,13 @@ gl_FragColor = vec4(0.0, 1.0, 0.0, 0.5);
 
 	#map-cropping {
 		width: 80%;
-		height: 70vh;
+		height: 80vh;
 		overflow: hidden;
 		border-radius: var(--border-radius);
 	}
 
 	#map {
-		height: 80vh;
+		height: 84vh;
 	}
 
 	p {
@@ -239,8 +239,10 @@ gl_FragColor = vec4(0.0, 1.0, 0.0, 0.5);
 		color: var(--white);
 		font-size: var(--xs);
 		z-index: 99;
-		margin: 20px 40px;
+		margin: 20px 20% 20px 20%;
+		left: 0;
 		padding: 10px;
 		background-color: rgba(0, 0, 0, 0.3);
+		text-align: center;
 	}
 </style>

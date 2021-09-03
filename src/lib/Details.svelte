@@ -15,7 +15,7 @@
 	<p id="this-is-the-land">
 		This is the land that has been reserved for Cosgrove solar farm. These smaller-scale farms are
 		the future, making use of unproductive farmland without the oppressive needs of a large solar
-		projects. Yet the impact on locals will&nbsp;be&nbsp;profound.
+		projects. Yet the impact on locals will be&nbsp;profound.
 	</p>
 </div>
 
