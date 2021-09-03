@@ -59,7 +59,7 @@
 	@media (max-width: 600px) {
 		header {
 			padding: 20px;
-			min-height: 80vh;
+			min-height: 70vh;
 		}
 		.text {
 			margin: 30px 0;

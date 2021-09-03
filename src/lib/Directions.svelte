@@ -87,7 +87,6 @@
 			<path
 				d="M25.667 57.6667C39.0003 57.6667 49.0003 41 49.0003 34.3334C49.0003 41 59.0003 57.6667 72.3337 57.6667"
 				stroke="white"
-				stroke-width="2"
 				stroke-linejoin="bevel"
 			/>
 		</svg>
@@ -222,6 +221,10 @@
 		height: 70px;
 	}
 
+	svg#north > path {
+		stroke-width: 4;
+	}
+
 	#stats {
 		display: flex;
 		flex-direction: row;
@@ -262,6 +265,9 @@
 		#north {
 			margin-top: 16px;
 			height: 100;
+		}
+		svg#north > path {
+			stroke-width: 2;
 		}
 		#map-directions {
 			margin-right: -164px;
