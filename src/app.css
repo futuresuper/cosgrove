@@ -3,6 +3,11 @@
 	src: url('./lib/fonts/MonumentGrotesk-Regular.otf');
 }
 
+@font-face {
+	font-family: 'MonumentGroteskMono';
+	src: url('./lib/fonts/MonumentGrotesk-Mono.otf');
+}
+
 :root {
 	font-family: 'MonumentGrotesk', sans-serif;
 
@@ -13,7 +18,7 @@
 
 	/* Text sizes */
 	--xxs: 12px;
-	--xs: 18px;
+	--xs: 22px;
 	--s: 28px;
 	--m: 32px;
 	--l: 50px;
@@ -29,7 +34,7 @@
 	:root {
 		/* Text sizes */
 		--xxs: 12px;
-		--xs: 15px;
+		--xs: 16px;
 		--s: 20px;
 		--m: 24px;
 		--l: 34px;
