@@ -17,11 +17,14 @@
 
 	let animationStarted = false;
 	let interval;
-	let animationDuration = 4000; // ms
+	let animationDuration = 5000; // ms
 	let updateSpeed = 50; // ms
 	const startAnimation = () => {
-		animationStarted = true;
-		interval = setInterval(updateStats, updateSpeed);
+		// start after short delay
+		setTimeout(() => {
+			animationStarted = true;
+			interval = setInterval(updateStats, updateSpeed);
+		}, 1000);
 	};
 
 	let km = 0;
@@ -158,6 +161,7 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-end;
+		overflow: hidden;
 	}
 
 	#map-directions {
@@ -231,7 +235,7 @@
 
 	.path-animation {
 		animation-name: draw;
-		animation-duration: 8s; /* double actual time it will take */
+		animation-duration: 10s; /* double actual time it will take */
 		animation-iteration-count: 1;
 		animation-timing-function: linear;
 		animation-fill-mode: forwards;
