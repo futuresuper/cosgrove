@@ -10,6 +10,7 @@
 
 :root {
 	font-family: 'MonumentGrotesk', sans-serif;
+	--mono: 'MonumentGroteskMono', sans-serif;
 
 	/* Colours */
 	--green: #3dfa52;
