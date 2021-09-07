@@ -10,6 +10,7 @@
 	import Shifting from '$lib/Shifting.svelte';
 	import ThisIsCosgrove from '$lib/ThisIsCosgrove.svelte';
 	import Timeline from '$lib/Timeline.svelte';
+	import Footer from '$lib/Footer.svelte';
 </script>
 
 <body>
@@ -24,6 +25,7 @@
 	<Renewables />
 	<Shifting />
 	<Timeline />
+	<Footer />
 </body>
 
 <style>
