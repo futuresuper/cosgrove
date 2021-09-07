@@ -167,7 +167,7 @@
 			/>
 		</svg>
 	</div>
-	<hr id="laptops" class="last" />
+	<hr id="laptops" />
 </div>
 
 <style>
