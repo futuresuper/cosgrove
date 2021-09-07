@@ -34,7 +34,7 @@
 	}
 
 	@media (max-width: 700px) {
-		div {
+		#container {
 			height: 60vh;
 		}
 	}

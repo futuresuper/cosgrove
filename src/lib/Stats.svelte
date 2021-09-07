@@ -90,7 +90,7 @@
 		</svg>
 	</div>
 	<hr id="mwh" class="last" />
-	<p>In a single year Cosgrove will generate:</p>
+	<p>Which is enough to power the equivalent of:</p>
 	<hr />
 	<div class="row">
 		<div class="left">
@@ -205,5 +205,24 @@
 
 	.last {
 		margin-bottom: 80px;
+	}
+
+	@media (max-width: 800px) {
+		.left {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+		.container {
+			padding: 20px;
+		}
+		.number {
+			font-size: var(--xl);
+		}
+		.unit {
+			margin: 2px 0 0 0;
+		}
+		svg {
+			width: 80px;
+		}
 	}
 </style>
