@@ -35,6 +35,7 @@
 <style>
 	footer {
 		padding: 20px;
+		font-family: var(--mono);
 	}
 
 	.container {
